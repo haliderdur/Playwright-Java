@@ -20,8 +20,7 @@ public class PlaywrightTests_P01 {
         page.keyboard().insertText("apple");
         page.keyboard().press("Enter");
 
-        page.waitForTimeout(2000);
-
+        page.waitForTimeout(1000);
 
 
         page.close();
