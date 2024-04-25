@@ -25,28 +25,28 @@ public class P01_PlaywrightTest {
         */
 
         // start new tab
-        Page pageTab = browser.newPage();
+        Page page = browser.newPage();
 
         // open google page
-        pageTab.navigate("https://www.google.com");
+        page.navigate("https://www.google.com");
 
         // accept cookies
-        pageTab.click("id=L2AGLb");
+        page.click("id=L2AGLb");
         // click search input box
-        pageTab.click("textarea[title='Search']");
+        page.click("textarea[title='Search']");
         // type apple
-        pageTab.keyboard().insertText("apple");
+        page.keyboard().insertText("apple");
         // press enter
-        pageTab.keyboard().press("Enter");
+        page.keyboard().press("Enter");
         // assert page title
-        assertThat(pageTab).hasTitle("apple - Google Search");
+        assertThat(page).hasTitle("apple - Google Search");
         // wait for new page load
-        pageTab.waitForTimeout(1000);
+        page.waitForTimeout(1000);
 
-        pageTab.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("google_AppleSearch_screenshot1.png")));
+        page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("google_AppleSearch_screenshot1.png")));
 
         // close tab
-        pageTab.close();
+        page.close();
         // close browser
         browser.close();
         // close Playwright
