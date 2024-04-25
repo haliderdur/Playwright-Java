@@ -1,19 +1,22 @@
-package com.halid.tests.day01.playwrightIntro;
+package com.halid.tests.day01.pac_01_playwrightIntro;
 
-import com.microsoft.playwright.*;
-import com.microsoft.playwright.assertions.PlaywrightAssertions;
+import com.microsoft.playwright.Browser;
+import com.microsoft.playwright.BrowserType;
+import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 
 import java.nio.file.Paths;
-import java.util.List;
 
-public class PlaywrightTests_P01 {
+import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
+
+public class P01_PlaywrightTest {
 
     public static void main(String[] args) throws InterruptedException {
         Playwright playwright = Playwright.create();
 
         // set Browser object
-        BrowserType chromium = playwright.chromium();
-        // start Browser
+        BrowserType chromium = playwright.chromium(); // playwright.firefox();.....
+        // start Browser - to see the browser during execution, setHeadless(false)
         Browser browser = chromium.launch(new BrowserType.LaunchOptions().setHeadless(false).setSlowMo(0));
 
         /*
@@ -35,6 +38,8 @@ public class PlaywrightTests_P01 {
         pageTab.keyboard().insertText("apple");
         // press enter
         pageTab.keyboard().press("Enter");
+        // assert page title
+        assertThat(pageTab).hasTitle("apple - Google Search");
         // wait for new page load
         pageTab.waitForTimeout(1000);
 
