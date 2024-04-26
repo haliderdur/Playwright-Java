@@ -7,7 +7,7 @@ import com.microsoft.playwright.Playwright;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class P02_clickLinkWithText {
+public class P02_ClickLinkWithText {
 
     @Test
     void test() {
