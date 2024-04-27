@@ -25,7 +25,6 @@ public class P05_GetText_GetAttribute {
         System.out.println("placeholder = " + placeholder);
         Assertions.assertEquals("first name",placeholder);
 
-
         page.waitForTimeout(2000);
         page.close();
         browser.close();
