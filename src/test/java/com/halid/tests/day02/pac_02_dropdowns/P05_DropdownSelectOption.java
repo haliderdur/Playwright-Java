@@ -44,8 +44,11 @@ public class P05_DropdownSelectOption {
         String actualDay = page.evaluate("el=>el.selectedOptions[0].text", dayDropdown.elementHandle()).toString();
 
         System.out.println("actualYear = " + actualYear);
+        System.out.println("Year with DOM knowledge = " + page.evaluate("document.querySelector('#year').value").toString());
         System.out.println("actualMonth = " + actualMonth);
+        System.out.println("Month with DOM knowledge = " + page.evaluate("document.querySelector('#month').value").toString());
         System.out.println("actualDay = " + actualDay);
+        System.out.println("Day with DOM knowledge = " + page.evaluate("document.querySelector('#day').value").toString());
 
 
         page.close();
